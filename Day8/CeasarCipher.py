@@ -1,41 +1,40 @@
+#TODO-1: Import and print the logo from art.py when the program starts.
+from art import logo
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
+#TODO-2: What happens if the user enters a number/symbol/space?
 
-#TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
-def encrypt(text, shift):
-    encrypted_text = ""
-    temp = text.split()
-    for word in temp:
-        for letter in word:
-            if letter in alphabet:
-                position = alphabet.index(letter)
-                new_position = position + shift
-                if new_position > 25:
-                    new_position -= 26
-                encrypted_text += alphabet[new_position]
-            else:
-                encrypted_text += letter
-    print("encrypted_text: ", encrypted_text)
+def caesar(text, shift, encode_or_decode):
+    output_text = ""
+    if encode_or_decode == "decode":
+                shift *= -1
+    for letter in text:
+        if letter in alphabet:
+            new_position = alphabet.index(letter) + shift
+            new_position %= len(alphabet)
+            output_text += alphabet[new_position]
+        else:
+            output_text += letter
+    print(f"{encode_or_decode}d text: {output_text}")
+    
+#TODO-3: Can you figure out a way to ask the user if they want to restart the cipher program?
 
-def decrypt(text, shift):
-    decrypted_text = ""
-    temp = text.split()
-    for word in temp:
-        for letter in word:
-            if letter in alphabet:
-                position = alphabet.index(letter)
-                new_position = position - shift
-                if new_position < 0:
-                    new_position += 26
-                decrypted_text += alphabet[new_position]
-            else:
-                decrypted_text += letter
-    print("decrypted_text: ", decrypted_text)
+restart = True
+while restart:
+    print(logo)
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+    
+    caesar(text, shift, direction)
+    
+    restart_input = input("Do you want to restart the program? Type 'yes' or 'no':\n").lower()
+    if restart_input == "no":
+        restart = False
+        print("Goodbye!")
+    elif restart_input == "yes":
+        print("Restarting program...")
+    else:
+        print("Invalid input. Exiting program.")
 
-if direction == "encode":
-    encrypt(text, shift)  
-else:
-    decrypt(text, shift)
+
