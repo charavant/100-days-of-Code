@@ -27,7 +27,7 @@ This is a repository of my final projects for Angela Yu's 100 Days of Code: The 
 **Day 10 Project: [Text-based Calculator](https://github.com/charavant/100-days-of-Code/tree/main/Day10)**
 - Topics: Functions with Outputs, Docstrings
 
-**Day 11 Project: [Blackjack Game]()**
+**Day 11 Project: [Blackjack Game](https://github.com/charavant/100-days-of-Code/tree/main/Day11)**
 - Blackjack Capstone Project
 - Still a work in progress
 
