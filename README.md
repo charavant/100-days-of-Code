@@ -1,6 +1,7 @@
+
 Hello,
 
-This is a repository of my final projects for Angela Yu's 100 Days of Code: The Complete Python Pro Bootcamp for 2023. I am currently on Day 89 and slowly putting the finished projects into Github for my reference. This repository is still a work in progress, thank you for visiting!
+This is a repository of my final projects for Angela Yu's 100 Days of Code: The Complete Python Pro Bootcamp for 2024. I am currently on Day 12 and slowly putting the finished projects into Github for my reference. This repository is still a work in progress, thank you for visiting!
 
 ## Beginner
 **Day 3 Project: [Treasure Island Hunt](https://github.com/charavant/100-days-of-Code/tree/main/Day3)**
@@ -27,7 +28,7 @@ This is a repository of my final projects for Angela Yu's 100 Days of Code: The 
 **Day 10 Project: [Text-based Calculator](https://github.com/charavant/100-days-of-Code/tree/main/Day10)**
 - Topics: Functions with Outputs, Docstrings
 
-**Day 11 Project: [Blackjack Game]()**
+**Day 11 Project: [Blackjack Game](https://github.com/charavant/100-days-of-Code/tree/main/Day11)**
 - Blackjack Capstone Project
 - Still a work in progress
 
