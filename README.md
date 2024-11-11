@@ -32,22 +32,22 @@ This is a repository of my final projects for Angela Yu's 100 Days of Code: The 
 - Blackjack Capstone Project
 - Still a work in progress
 
-**Day 12 Project: [The Number Guessing Game]()**
+**Day 12 Project: [The Number Guessing Game](https://github.com/charavant/100-days-of-Code/tree/main/Day12)**
 - Topics: Namespaces, Local vs. Global Scope, Modifying a Global Variable, Python Constants
 
-**Day 13 Debugging: [Finding and Fixing Errors in your Code]()**
+**Day 13 Debugging: [Finding and Fixing Errors in your Code](https://github.com/charavant/100-days-of-Code/tree/main/Day13)**
 - Topics: Describe the Problem, Reproduce the Bug, Evaluate Each Line, Use a print() Statement, Use a Debugger
 
-**Day 14 Project: [Higher Lower Game]()**
+**Day 14 Project: [Higher Lower Game](https://github.com/charavant/100-days-of-Code/tree/main/Day14)**
 - Topics: Using Dictionaries, Conditionals, Functions, Debugging, and Random module 
 
 
 ## Intermediate
 
-**Day 15 Project: [Coffee Machine]()**
+**Day 15 Project: [Coffee Machine](https://github.com/charavant/100-days-of-Code/tree/main/Day15)**
 - Topics: Setup Local Development Environment and Coffee Machine Project, PEP8 Style Guide, Functions, Using Pycharm
 
-**Day16 Project: [Coffee Machine in OOP]()**
+**Day16 Project: [Coffee Machine in OOP](https://github.com/charavant/100-days-of-Code/tree/main/Day16)**
 - Topics: Object Oriented Programming (OOP): Classes, Objects, Constructing Objects, Accessing Attributes, Add Python Packages, Modifying Object Attributes and Calling Methods 
 
 **Day17 Project: [Quiz Game]()**
