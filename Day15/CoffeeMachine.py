@@ -33,7 +33,7 @@ resources = {
 
 is_on = True
 
-def Payment(choice):
+def Payment():
     money = 0 
     quarters = input("How many quarters? ")
     dimes = input("How many dimes? ")
@@ -49,36 +49,40 @@ def Payment(choice):
         money += int(pennies) * 0.01
         
     if (money <= 0):
-        
         return 0
-    
-    if (choice == "espresso"):
-        money = money - float(MENU["espresso"]['cost'])
-    elif (choice == "latte"):
-        money = money - float(MENU["latte"]['cost'])
-    else:
-        money = money - float(MENU["cappuccino"]['cost'])
-    print(f"Money given: {money}")
     return money
-   
+ 
+def is_transaction_successful(money_received, drink_cost):
+    if money_received >= drink_cost:
+        change = round(money_received - drink_cost,2)
+        print(f"Here is {change}$")
+        global profit
+        profit += drink_cost
+        return True
+    else:
+        print("Sorry, that's not enough mone. Money refunded.")
+        return False
+  
 def PrintReport():
     print(f"water: {resources["water"]}")
     print(f"milk: {resources["milk"]}")
     print(f"coffee: {resources["coffee"]}")
-# 1 - print report 2 - check rss sufficient 3 - process coins 4 - Check transaction successful 5 - make coffee
+
+def make_coffee(drink_name, order_ingredients):
+    for item in order_ingredients:
+        resources[item] -= order_ingredients[item]
+    print(f"Here is your {drink_name} ☕")    
 
 def PrintMenu():
     print(f"Menu:\n espresso: {MENU['espresso']['cost']}$\n latte: {MENU['latte']['cost']}$\n cappuccino: {MENU['cappuccino']['cost']}$")
 
-def CheckRss(choice):
-    water = int(resources["water"]) - int(MENU[choice]['ingredients'])
-    coffee = int(resources["coffee"]) - int(MENU[choice]['ingredients'])
-    bool = (water > 0) and (coffee > 0)
-    if choice != "espresso":
-        milk = int(resources["milk"]) - int(MENU[choice]['ingredients'])
-        bool = bool and (milk > 0)
-    return bool
-
+def is_resource_sufficient(order_ingredients):
+    for item in order_ingredients:
+        if order_ingredients[item] >= resources[item]:
+            print(f"Sorry, there is not enough {item}.")
+            return False
+    return True    
+    
 while is_on: 
     PrintMenu()
     choice = input("What would you like?: ")
@@ -88,11 +92,9 @@ while is_on:
     elif choice == "report":
         PrintReport()
     else:
-        money = Payment(choice)
-        if money == 0:
-            print("Get out of here!")
-            print("\n" * 100)
-        elif money >= int(MENU[choice]['cost']):
-            enoughRss = CheckRss(choice)
-            profit += money
-            print(f"Your change is {money - int(MENU[choice]['cost'])}")
+        drink = MENU[choice]
+        if is_resource_sufficient(drink["ingredients"]):
+            money = Payment()
+            if is_transaction_successful(money, drink["cost"]):
+                make_coffee(choice, drink["ingredients"])
+            
